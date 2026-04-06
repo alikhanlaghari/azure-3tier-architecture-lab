@@ -9,11 +9,23 @@ The lab was implemented entirely using the Azure Portal and focuses on real-worl
 
 ## Architecture
 
+This lab implements a secure 3-tier architecture inside an Azure Virtual Network.
+
+- Web Tier (Public) — Handles incoming HTTP traffic from the internet
+- App Tier (Private) — Processes internal application logic
+- Database Tier (Private) — Stores data with restricted access
+
+### Traffic Flow
+
 Internet → Web Tier → App Tier → Database Tier
 
-- Web Tier (Public access via IIS)
-- App Tier (Private, internal only)
-- Database Tier (Highly restricted)
+- Internet → Web (HTTP 80)
+- Web → App (HTTP 80)
+- App → DB (SQL 1433)
+
+### Architecture Diagram
+
+![Azure 3-Tier Architecture](screenshots/azure-3tier-architecture.png)
 
 ---
 
